@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 63%;
+}
+
+body{
+    background: #36555c;
+    display: flex;
+}
+
+.container{
+    margin: 1px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;    
+    width: 100%;
+    height: 80vh;
+    flex-wrap: nowrap;
+}
+
+.container main{
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+}
+
+.container header{
+    text-align: center;
+}
+
+.container header h1{
+    flex-wrap: wrap;
+    font-size: 19vmin;
+    font-family: monospace;
+    color: white;
+}
+
+input{
+    font-size: 3vmin;
+    transition: .5s;
+    color: white;
+    background: #19191a;
+    border-radius: 2vmin;
+    border: none;
+    width: 90vmin;
+    height: 8vmin;
+}
+
+
+.item{
+    border-radius: 20px;
+    margin: 1px auto;
+    padding: .6rem;
+    align-items: center;
+    color: white;
+    display: flex;
+    background-color: #1a1a1aa9;
+    min-width: 60vmin;
+    max-width: 90vmin;
+    font-family: "Roboto", sans-serif;
+    font-weight: 350;
+    font-size: 4vmin;
+    flex-wrap: wrap;
+}
+
+.item p {
+  margin-right: 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.trash_bin{
+    margin-left: 1vmin;
+    min-width: 6vmin;
+    max-width: 4vmin;
+    height: 6vmin;
+    background: transparent;
+    border: none;
+    background-image: url(../../src/assets/imgs/trash_icon.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-color: rgba(255, 255, 255, 0.411);
+    border-radius: 10px;
+    
+}
+
+.check{
+    margin-left: auto;
+    min-width: 6vmin;
+    max-width: 4vmin;
+    height: 6vmin;
+    background: transparent;
+    border: none;
+    background-image: url(../../src/assets/imgs/check.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-color: rgba(255, 255, 255, 0.411);
+    border-radius: 10px;
+}
+
+.dashed{
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.39);
+}
+
+.close_check{
+    background-image: url(../../src/assets/imgs/close.png);
+
+}
+
+#relogio{
+    padding: 2rem;
+    margin: 1px auto;
+    font-size: 3vmin;
+    color: white;
+}
+
+.trash_bin:hover{
+    cursor: pointer;
+}
+
+.check:hover{
+    cursor: pointer;
+}
+
+
