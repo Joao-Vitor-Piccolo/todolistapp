@@ -20,3 +20,10 @@ packages = [{include = "todolist", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+run = "fastapi dev src/todolist/main.py"
+test = "pytest -s -x --cov=todolist -vv"
+uvicorn = "uvicorn todolist.main:app --port 8001"
+htmlcov = 'start "C:\\Users\\janj\\AppData\\Local\\Programs\\Opera GX\\opera.exe" C:\\Users\\janj\\PycharmProjects\\todolist\\htmlcov\\index.html'
+post_test = "covarage html"

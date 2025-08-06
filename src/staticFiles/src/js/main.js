@@ -1,7 +1,7 @@
 //DECLARAÇÃO DE VARIAVEIS
 let inputEl = document.querySelector("input");
 let btnEl = document.querySelector("button");
-let tarefas =[];
+let tarefas= [];
 
 //FUNÇÃO PARA VALIDAR CAMPO
 
