@@ -10,7 +10,9 @@ requires-python = "3.12.*"
 dependencies = [
     "fastapi (>=0.116.1,<0.117.0)",
     "taskipy (>=1.14.1,<2.0.0)",
-    "pytest (>=8.4.1,<9.0.0)"
+    "pytest (>=8.4.1,<9.0.0)",
+    "sqlalchemy (>=2.0.42,<3.0.0)",
+    "pydantic-settings (>=2.10.1,<3.0.0)"
 ]
 
 [tool.poetry]
@@ -27,3 +29,4 @@ test = "pytest -s -x --cov=todolist -vv"
 uvicorn = "uvicorn todolist.main:app --port 8001"
 htmlcov = 'start "C:\\Users\\janj\\AppData\\Local\\Programs\\Opera GX\\opera.exe" C:\\Users\\janj\\PycharmProjects\\todolist\\htmlcov\\index.html'
 post_test = "covarage html"
+create_table = 'python -c "from src.todolist.database import create_table; create_table()"'

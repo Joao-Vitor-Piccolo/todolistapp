@@ -16,4 +16,5 @@ class UserDB(Base):
 
 class Item(Base):
     __tablename__ = "item"
+    user_id = sa.Column(sa.Integer, sa.ForeignKey("users.id"), nullable=False)
     toDo = sa.Column(sa.String, nullable=False, unique=True)
