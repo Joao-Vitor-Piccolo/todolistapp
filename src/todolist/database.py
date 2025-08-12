@@ -11,3 +11,5 @@ def get_session():
 
 def create_table():
     Base.metadata.create_all(engine)
+
+create_table()
