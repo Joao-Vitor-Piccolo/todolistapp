@@ -7,9 +7,14 @@ inputEl.addEventListener("keypress", (e)=>{
     if(e.key == "Enter") adicionarTarefa();
 })
 
-const validarCampo=()=>{
+const validarCampo=(item)=>{
   let valida = false;
-  if(document.getElementById("task").value == "") valida = true;
+  if(document.getElementById("task").value == ""){
+    valida = true;
+  }
+  if(tarefas.includes(item)){
+    valida = true;
+  }
   return valida;
 }
 
@@ -51,12 +56,11 @@ function criarDiv(value) {
 
 function adicionarTarefa(){
     let linha = document.getElementById("task")
-
-    if(validarCampo()){
+    if(validarCampo(linha.value)){
         Swal.fire({
             icon:"warning",
             title:"Atenção",
-            text:"Preencha o campo tarefa",
+            text:"Preencha o campo tarefa // Não pode duas tarefas iguais",
             confirmButtonColor:"#3085d6",
             confirmButtonText:"Ok"
         })

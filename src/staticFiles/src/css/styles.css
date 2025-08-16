@@ -41,7 +41,6 @@ body{
 }
 
 #login input{
-    margin-left: 9.5%;
     font-family: monospace;
     font-size: 1.7rem;
     font-weight: bolder;
@@ -58,8 +57,6 @@ body{
 }
 
 .botao{
-    margin-left: 20.5%;
-    margin-bottom: 2%;
     background-color: #adcad1c9;
     font-family: monospace;
     border-radius: 1rem;
@@ -75,6 +72,31 @@ body{
     height: 6.5vh;
     cursor: pointer;
     color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.8rem;
+    margin-bottom: 5%;
+}
+
+form .botao{
+    margin-top: 5%;
+    align-self: center;
+}
+
+#cadastro{
+    margin: 0;
+    background: transparent;
+    border: 0px;
+    color: rgb(54, 203, 230);
+}
+
+#cadastro:hover{
+    color: rgb(89, 168, 241);
+    cursor: pointer;
 }
 
 .container{
