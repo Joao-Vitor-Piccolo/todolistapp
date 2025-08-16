@@ -2,7 +2,6 @@
 
 *{
     margin: 0;
-    padding: 1px;
     box-sizing: border-box;
 }
 
@@ -11,11 +10,69 @@ html{
 }
 
 body{
-    background: #36555c;
+    background: #36555cfa;
     display: flex;
 }
 
+#login{
+    padding: 2.7rem;
+    transition: all 0.3s ease;
+    font-family: monospace;
+    font-size: 4vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    background-color: #4d757ec9;
+    height: 100vh;
+    width: 35vw;
+    mask-image: linear-gradient(to right, black 95%, transparent 100%);
+
+}
+
+#login h2{
+    margin-bottom: 15%;
+    color: white;
+}
+
+#login input{
+    font-family: monospace;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    width: 25vw;
+    height: 5vmax;
+    border-radius: .9rem;
+    padding: 3%;
+}
+
+#login input:focus{
+    font-weight: 50;
+    width: 26vw;
+    transition: all 0.4s ease;
+}
+
+button{
+    margin-left: 12.5%;
+    background-color: #adcad1c9;
+    font-family: monospace;
+    border-radius: 1rem;
+    border: 1px solid rgb(255, 255, 255);
+    width: 18vw;
+    height: 6vh;
+}
+
+#login #cadastro:hover{
+    font-weight: 1000;
+    transition: all 0.2s ease;
+    width: 18.9vw;
+    height: 6.5vh;
+    cursor: pointer;
+    color: white;
+}
+
 .container{
+    position: absolute;
+    z-index: 1;
     margin: 1px auto;
     display: flex;
     align-items: center;
@@ -43,7 +100,7 @@ body{
     color: white;
 }
 
-input{
+.container input{
     padding: 1.2rem;
     font-size: 3vmin;
     transition: .5s;

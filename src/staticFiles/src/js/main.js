@@ -9,8 +9,6 @@ const validarCampo=()=>{
 }
 
 
-
-
 function atualizarRelogio() {
   const agora = new Date();
 

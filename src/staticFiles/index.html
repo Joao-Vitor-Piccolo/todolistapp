@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/styles.css">
-     <!-- FRAMEWORK EXTERNO -->
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Lista Tarefas</title>
 </head>
 <body>
+
     <div class="container">
     <header>
         <h1>Take action.</h1>
@@ -20,7 +20,16 @@
 
     </main>
     </div>
-    <!-- JS EXTERNO -->
+            <div id="login">
+            <h2>Login</h2>
+            <form action="/enviar" method="post">
+            <input type="text" id="nome" name="nome" placeholder="Usuario" required><br><br>
+
+            <input type="email" id="email" name="email" placeholder="E-mail" required><br><br>
+
+            <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
+            <button id="cadastro">Fazer Cadastro</button>
+        </div>
     <script src="./src/js/main.js"></script>
 </body>
 

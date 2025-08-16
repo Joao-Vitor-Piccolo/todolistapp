@@ -27,11 +27,12 @@ def add_task(toDo: ToDo_Schema, session=Depends(get_session)):
 
 @app.post("/create_user/", status_code=HTTPStatus.CREATED, response_model=Message)
 def add_user(user: User_Schema, session=Depends(get_session)):
-    db_user = session.scalar(select(UserDB).where((UserDB.username == user.username) | (UserDB.email == user.email)))
+    db_user = session.scalar(
+        select(UserDB).where((UserDB.username == user.username) | (UserDB.email == user.email))
+    )
     if db_user:
         raise HTTPException(status_code=HTTPStatus.CONFLICT, detail="Email or Username Already exists")
     else:
-
         db_user = UserDB(
                     username=user.username, email=user.email,
                     password=PasswordHash.recommended().hash(user.password)
