@@ -1,6 +1,6 @@
 let inputEl = document.querySelector("input");
 let btnEl = document.querySelector("button");
-let tarefas = ["Comprar pão", "Ganhar dinheiro"];
+let tarefas = ["Comprar pão"];
 
 
 inputEl.addEventListener("keypress", (e)=>{
@@ -19,6 +19,11 @@ function verificarLista(){
   }
 }
 
+function removerTarefas(tarefaDiv, valor){
+  tarefaDiv.remove()
+  tarefas = tarefas.filter(item => item !== valor)
+}
+
 function criarDiv(value) {
   const container = document.getElementById("main");
 
@@ -32,7 +37,7 @@ function criarDiv(value) {
   const check = document.createElement("button");
   check.classList.add("check")
   trash_bin.classList.add('trash_bin')
-  trash_bin.onclick = () => novaDiv.remove();
+  trash_bin.onclick = () => removerTarefas(novaDiv, value);
   check.onclick = () => {
   p.classList.toggle("dashed");
   check.classList.toggle("close_check");
@@ -57,6 +62,7 @@ function adicionarTarefa(){
         })
     }
     else{
+        tarefas.push(linha.value)
         criarDiv(linha.value);
     }
 }
@@ -76,9 +82,15 @@ function atualizarRelogio() {
   document.getElementById("relogio").textContent = horarioFormatado;
 }
 
+function aparecerLogin(){
+  if (tarefas.length > 1){
+      const login = document.getElementById("login");
+      login.classList.add("show");
+  }
+}
 
 verificarLista()
 setInterval(atualizarRelogio, 1000);
 atualizarRelogio();
-
+setInterval(aparecerLogin, 1000)
 
