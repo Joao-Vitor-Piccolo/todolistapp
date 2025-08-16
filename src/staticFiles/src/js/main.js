@@ -1,29 +1,23 @@
 let inputEl = document.querySelector("input");
 let btnEl = document.querySelector("button");
-let tarefas= [];
+let tarefas = ["Comprar pão", "Ganhar dinheiro"];
+
+
+inputEl.addEventListener("keypress", (e)=>{
+    if(e.key == "Enter") adicionarTarefa();
+})
 
 const validarCampo=()=>{
- let valida = false;
- if(document.getElementById("task").value == "") valida = true;
- return valida;
+  let valida = false;
+  if(document.getElementById("task").value == "") valida = true;
+  return valida;
 }
 
-
-function atualizarRelogio() {
-  const agora = new Date();
-
-  const dia = agora.getDate().toString().padStart(2, "0");
-  const mes = (agora.getMonth() + 1).toString().padStart(2, "0");
-  const ano = agora.getFullYear().toString().slice(-2);
-
-  const horas = agora.getHours().toString().padStart(2, "0");
-  const minutos = agora.getMinutes().toString().padStart(2, "0");
-
-  const horarioFormatado = `${dia}/${mes}/${ano} || ${horas}:${minutos}`;
-
-  document.getElementById("relogio").textContent = horarioFormatado;
+function verificarLista(){
+  for(let tarefa of tarefas){
+    criarDiv(tarefa)
+  }
 }
-
 
 function criarDiv(value) {
   const container = document.getElementById("main");
@@ -39,7 +33,7 @@ function criarDiv(value) {
   check.classList.add("check")
   trash_bin.classList.add('trash_bin')
   trash_bin.onclick = () => novaDiv.remove();
-    check.onclick = () => {
+  check.onclick = () => {
   p.classList.toggle("dashed");
   check.classList.toggle("close_check");
 };
@@ -67,10 +61,24 @@ function adicionarTarefa(){
     }
 }
 
-inputEl.addEventListener("keypress", (e)=>{
-    if(e.key == "Enter") adicionarTarefa();
-})
+function atualizarRelogio() {
+  const agora = new Date();
 
+  const dia = agora.getDate().toString().padStart(2, "0");
+  const mes = (agora.getMonth() + 1).toString().padStart(2, "0");
+  const ano = agora.getFullYear().toString().slice(-2);
+
+  const horas = agora.getHours().toString().padStart(2, "0");
+  const minutos = agora.getMinutes().toString().padStart(2, "0");
+
+  const horarioFormatado = `${dia}/${mes}/${ano} || ${horas}:${minutos}`;
+
+  document.getElementById("relogio").textContent = horarioFormatado;
+}
+
+
+verificarLista()
 setInterval(atualizarRelogio, 1000);
 atualizarRelogio();
+
 
