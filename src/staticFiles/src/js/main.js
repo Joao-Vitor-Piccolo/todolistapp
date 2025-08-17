@@ -2,7 +2,6 @@ let inputEl = document.querySelector("input");
 let tarefas = ["Comprar pão"];
 let btn_login = document.getElementById("show_div_login")
 let btn_cadastro = document.getElementById("show_div_cadastro")
-let btn_aperto = true
 
 const validarCampo=(item)=>{
   let valida = false;
@@ -21,18 +20,43 @@ function verificarLista(){
   }
 }
 
-
-
 function removerTarefas(tarefaDiv, valor){
   tarefaDiv.remove()
   tarefas = tarefas.filter(item => item !== valor)
 }
 
+function rendenizarLogin(){
+  const cadastre_se = document.getElementById("botao_cadastro")
+  cadastre_se.classList.add("show")
+  const login = document.getElementById("login");
+  const confirmarSenha = login.querySelector("input[name='confirmar_senha']");
+  if (confirmarSenha) {
+    confirmarSenha.remove();
+  }
+  const h2 = login.querySelector("h2");
+  if (h2){
+     h2.textContent = "Login";
+  }
+
+  const btnLogin = login.querySelector("#botao_login");
+  if (btnLogin){
+     btnLogin.textContent = "Entrar";
+  }
+
+  const form = login.querySelector("form");
+  if (form){ 
+    form.setAttribute("action", "/token");
+  }
+}
+
 function rendenizarCadastro() {
-  btn_aperto = false
+  const login = document.getElementById("login");
   const cadastre_se = document.getElementById("botao_cadastro")
   cadastre_se.classList.add("remove")
-  const login = document.getElementById("login");
+  const confirmarSenha = login.querySelector("input[name='confirmar_senha']");
+  if (confirmarSenha) {
+    confirmarSenha.remove();
+  }
 
   const input = document.createElement("input");
   input.type = "confirmar_senha";
@@ -134,16 +158,16 @@ inputEl.addEventListener("keypress", (e)=>{
 })
 
 btn_login.addEventListener("click", () => {
-      const login = document.getElementById("login");
-      login.classList.add("show");
-});
+    const login = document.getElementById("login");
+    rendenizarLogin()
+    login.classList.add("show");
+
+    });
 
 btn_cadastro.addEventListener("click", () => {
-      if(btn_aperto){
-        const cadastro = document.getElementById("login");
-        rendenizarCadastro()
-        cadastro.classList.add("show");
-        }
+      const cadastro = document.getElementById("login");
+      rendenizarCadastro()
+      cadastro.classList.add("show");
 });
 
 verificarLista()
