@@ -1,11 +1,15 @@
 let inputEl = document.querySelector("input");
-let btnEl = document.querySelector("button");
 let tarefas = ["Comprar pão"];
-
+let btn_login = document.getElementById("show_div_login")
 
 inputEl.addEventListener("keypress", (e)=>{
     if(e.key == "Enter") adicionarTarefa();
 })
+
+btn_login.addEventListener("click", () => {
+      const login = document.getElementById("login");
+      login.classList.add("show");
+});
 
 const validarCampo=(item)=>{
   let valida = false;
