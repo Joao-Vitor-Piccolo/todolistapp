@@ -91,7 +91,7 @@ form .botao{
     align-self: center;
 }
 
-#cadastro{
+#botao_cadastro{
     text-decoration: underline;
     margin: 0;
     font-weight: 700;
@@ -100,7 +100,11 @@ form .botao{
     color: rgb(54, 203, 230);
 }
 
-#cadastro:hover{
+.remove{
+    display: none;
+}
+
+#botao_cadastro:hover{
     color: rgb(89, 168, 241);
     cursor: pointer;
 }
@@ -142,7 +146,7 @@ form .botao{
     height: 5vmin;
     border: 1px solid black;
     border-radius: 1rem;
-    background: white;
+    background-color: #adcad1e8;
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -150,7 +154,7 @@ form .botao{
 
 .conta_botoes:hover{
     cursor: pointer;
-    background-color: #a6caf8;
+    color: white;
     width: 20.3vmin;
     height: 5.3vmin;
     transition: .3s;

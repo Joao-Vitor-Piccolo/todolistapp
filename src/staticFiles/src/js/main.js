@@ -1,15 +1,8 @@
 let inputEl = document.querySelector("input");
 let tarefas = ["Comprar pão"];
 let btn_login = document.getElementById("show_div_login")
-
-inputEl.addEventListener("keypress", (e)=>{
-    if(e.key == "Enter") adicionarTarefa();
-})
-
-btn_login.addEventListener("click", () => {
-      const login = document.getElementById("login");
-      login.classList.add("show");
-});
+let btn_cadastro = document.getElementById("show_div_cadastro")
+let btn_aperto = true
 
 const validarCampo=(item)=>{
   let valida = false;
@@ -28,9 +21,44 @@ function verificarLista(){
   }
 }
 
+
+
 function removerTarefas(tarefaDiv, valor){
   tarefaDiv.remove()
   tarefas = tarefas.filter(item => item !== valor)
+}
+
+function rendenizarCadastro() {
+  btn_aperto = false
+  const cadastre_se = document.getElementById("botao_cadastro")
+  cadastre_se.classList.add("remove")
+  const login = document.getElementById("login");
+
+  const input = document.createElement("input");
+  input.type = "confirmar_senha";
+  input.name = "confirmar_senha";
+  input.placeholder = "Confirme a senha:";
+
+  const senha = login.querySelector("#senha");
+
+  if (senha) {
+    senha.insertAdjacentElement("afterend", input);
+  }
+
+  const h2 = login.querySelector("h2");
+  if (h2){
+     h2.textContent = "Cadastro";
+  }
+
+  const btnLogin = login.querySelector("#botao_login");
+  if (btnLogin){
+     btnLogin.textContent = "Cadastrar";
+  }
+
+  const form = login.querySelector("form");
+  if (form){ 
+    form.setAttribute("action", "/create_user/");
+  }
 }
 
 function criarDiv(value) {
@@ -75,6 +103,16 @@ function adicionarTarefa(){
     }
 }
 
+
+
+function aparecerLogin(){
+  if (tarefas.length > 1){
+      const login = document.getElementById("login");
+      login.classList.add("show");
+  }
+}
+
+
 function atualizarRelogio() {
   const agora = new Date();
 
@@ -90,12 +128,23 @@ function atualizarRelogio() {
   document.getElementById("relogio").textContent = horarioFormatado;
 }
 
-function aparecerLogin(){
-  if (tarefas.length > 1){
+
+inputEl.addEventListener("keypress", (e)=>{
+    if(e.key == "Enter") adicionarTarefa();
+})
+
+btn_login.addEventListener("click", () => {
       const login = document.getElementById("login");
       login.classList.add("show");
-  }
-}
+});
+
+btn_cadastro.addEventListener("click", () => {
+      if(btn_aperto){
+        const cadastro = document.getElementById("login");
+        rendenizarCadastro()
+        cadastro.classList.add("show");
+        }
+});
 
 verificarLista()
 setInterval(atualizarRelogio, 1000);
