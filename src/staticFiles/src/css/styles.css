@@ -128,24 +128,32 @@ form .botao{
     text-align: center;
 }
 
-#show_div_login{
-    position: absolute;
+#container_botoes{
+    display: flex;
+    flex-direction: column;
     align-self: flex-end;
-    width: 15vmin;
-    height: 12vmin;
-    border: 0px;
-    background: transparent;
-    background-image: url(../assets/imgs/login-de-usuario.png);
+    position: absolute;
+}
+
+.conta_botoes{
+    font-weight: bold;
+    margin: .6rem;
+    width: 20vmin;
+    height: 5vmin;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background: white;
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#show_div_login:hover{
+.conta_botoes:hover{
     cursor: pointer;
-    height: 14vmin;
-    width: 16vmin;
-    transition: .5s;
+    background-color: #a6caf8;
+    width: 20.3vmin;
+    height: 5.3vmin;
+    transition: .3s;
 }
 
 .container header h1{
