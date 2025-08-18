@@ -16,8 +16,7 @@ app = FastAPI()
 current_dir = os.path.dirname(__file__)
 static_dir = os.path.join(current_dir, "../staticFiles")
 
-SECRET_KEY = 'your-secret-key'  # Isso é provisório, vamos ajustar!
-ALGORITHM = 'HS256'
+
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 @app.post("/add", status_code=HTTPStatus.OK, response_model=Message)

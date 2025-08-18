@@ -2,6 +2,7 @@ let inputEl = document.querySelector("input");
 let tarefas = ["Comprar pão"];
 let btn_login = document.getElementById("show_div_login")
 let btn_cadastro = document.getElementById("show_div_cadastro")
+let liberar = true
 
 const validarCampo=(item)=>{
   let valida = false;
@@ -26,6 +27,7 @@ function removerTarefas(tarefaDiv, valor){
 }
 
 function rendenizarLogin(){
+  liberar = false
   const cadastre_se = document.getElementById("botao_cadastro")
   cadastre_se.classList.add("show")
   const login = document.getElementById("login");
@@ -50,6 +52,7 @@ function rendenizarLogin(){
 }
 
 function rendenizarCadastro() {
+  liberar = false
   const login = document.getElementById("login");
   const cadastre_se = document.getElementById("botao_cadastro")
   cadastre_se.classList.add("remove")
@@ -152,11 +155,6 @@ function atualizarRelogio() {
   document.getElementById("relogio").textContent = horarioFormatado;
 }
 
-
-inputEl.addEventListener("keypress", (e)=>{
-    if(e.key == "Enter") adicionarTarefa();
-})
-
 btn_login.addEventListener("click", () => {
     const login = document.getElementById("login");
     rendenizarLogin()
@@ -169,6 +167,12 @@ btn_cadastro.addEventListener("click", () => {
       rendenizarCadastro()
       cadastro.classList.add("show");
 });
+
+inputEl.addEventListener("keypress", (e)=>{
+  if(liberar){
+    if(e.key == "Enter") adicionarTarefa();
+  }
+})
 
 verificarLista()
 setInterval(atualizarRelogio, 1000);

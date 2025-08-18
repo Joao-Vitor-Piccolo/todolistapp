@@ -110,7 +110,7 @@ form .botao{
 }
 
 .container{
-    padding: 2rem;
+    padding: 1.5rem;
     position: absolute;
     z-index: 1;
     margin: 1px auto;
@@ -141,11 +141,10 @@ form .botao{
 
 .conta_botoes{
     font-weight: bold;
-    margin: .6rem;
+    margin: .3rem;
     width: 20vmin;
     height: 5vmin;
     border: 1px solid black;
-    border-radius: 1rem;
     background-color: #adcad1e8;
     background-position: 50%;
     background-size: contain;
@@ -155,8 +154,6 @@ form .botao{
 .conta_botoes:hover{
     cursor: pointer;
     color: white;
-    width: 20.3vmin;
-    height: 5.3vmin;
     transition: .3s;
 }
 
