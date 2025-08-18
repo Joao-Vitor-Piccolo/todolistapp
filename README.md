@@ -1,4 +1,3 @@
-Collecting workspace information```md
 # ToDoList (FastAPI)
 
 Backend simples em FastAPI com frontend estático para gerenciamento de tarefas e cadastro de usuários.
@@ -98,3 +97,4 @@ Arquivos de testes estão em [tests/](tests/).
 
 MIT
 ```
+
